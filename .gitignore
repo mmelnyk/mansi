@@ -1,0 +1,38 @@
+# ---> Go
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+*.exe
+*.dylib
+*.dll
+
+# Folders
+vendor
+.DS_Store
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.out
+*.test
+*.prof
+*~
+*.orig
+.*.swp
+
+debug
+test
+pprof
+cover.out
+cover.html
+
+core
