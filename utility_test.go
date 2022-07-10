@@ -98,3 +98,30 @@ func TestSetWindowTitle(t *testing.T) {
 		}
 	}
 }
+
+func TestCursorPosition(t *testing.T) {
+	var data = []struct {
+		line     int
+		column   int
+		expected string
+	}{
+		{1, 1, CSI + "1;1H"},
+		{0, 1, CSI + "1;1H"},
+		{1, 0, CSI + "1;1H"},
+		{0, 0, CSI + "1;1H"},
+		{1, -1, CSI + "1;1H"},
+		{-1, 1, CSI + "1;1H"},
+		{-1, -1, CSI + "1;1H"},
+		{2, 1, CSI + "2;1H"},
+		{1, 2, CSI + "1;2H"},
+		{2, 2, CSI + "2;2H"},
+		{3, 10, CSI + "3;10H"},
+		{100, 100, CSI + "100;100H"},
+	}
+
+	for _, i := range data {
+		if CursorPosition(i.column, i.line) != i.expected {
+			t.Errorf("Return does not match expectation for %d:%d", i.line, i.column)
+		}
+	}
+}
