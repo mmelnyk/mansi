@@ -7,7 +7,7 @@ mANSI has some basic definitions for ANSI Escape Codes
 
 * Defined constants for ANSI escape sequences
 * Helper functions for ANSI sequences with parameters
-* Support for Linux/BSD, MacOS and Windows 10+.
+* Support for Linux/BSD, MacOS and Windows 10+
 
 ## Usage
 Import mansi into your golang project and embed provided ANSI escape sequences into your code output.
