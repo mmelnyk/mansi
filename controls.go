@@ -11,6 +11,8 @@ const (
 	CursorRestorePosition = CSI + "u"    // Restores the cursor position/state in SCO console mode.
 	CursorHide            = CSI + "?25l" // Hides the cursor.
 	CursorShow            = CSI + "?25h" // Shows the cursor.
+	CursorNextLine        = CSI + "E"    // Moves the cursor to the beginning of the next line. If the cursor is already at the edge of the screen, this has no effect.
+	CursorPreviousLine    = CSI + "F"    // Moves the cursor to the beginning of the previous line. If the cursor is already at the edge of the screen, this has no effect.
 
 	// Screen
 	ScreenErase            = CSI + "2J"     // Clear entire screen.
@@ -35,4 +37,8 @@ const (
 	// Reset
 	Reset     = ESC + "c"  // Triggers a full reset of the terminal to its original state. This may include (if applicable): reset graphic rendition, clear tabulation stops, reset to default font, and more
 	SoftReset = CSI + "!p" // Reset certain terminal settings to their defaults.
+
+	// Scroll
+	ScrollUp   = CSI + "S" // Scroll the screen up one line. The top line is lost.
+	ScrollDown = CSI + "T" // Scroll the screen down one line. The bottom line is lost.
 )
